@@ -1,10 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
+:root {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
   --orange: hsl(34, 97%, 64%);
@@ -12,139 +8,142 @@
   --very-dark-blue: hsl(234, 12%, 34%);
   --greyish-blue: hsl(229, 6%, 66%);
   --very-light-grey: hsl(0, 0%, 98%);
+}
 
-  font-family: "Poppins", sans-serif;
-  color: var(--greyish-blue);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  place-content: center;
 
-  margin: 3em 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--greyish-blue);
+  background: var(--very-light-grey);
 }
-
-@media (min-width: 1200px) {
-  body {
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-}
-
-/* header */
 
 header {
   width: 90%;
-  max-width: 310px;
+  max-width: 320px;
+  margin: 5rem auto 0 auto;
   text-align: center;
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--very-dark-blue);
-  margin-bottom: 1rem;
+main {
+  max-width: 320px;
+  margin: 5rem auto;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 200;
-  color: var(--very-dark-blue);
+.img-icon {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.paragraph-large {
-  font-size: 0.94rem;
-  margin-bottom: 3rem;
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
   header {
     max-width: 480px;
   }
 
-  h1,
-  h2 {
-    font-size: 2.25rem;
-  }
-}
-
-/* main */
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.section-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container {
-  width: 90%;
-  max-width: 310px;
-  max-height: 200px;
-  text-align: left;
-
-  margin: 0.6rem 0;
-  padding: 1.65rem;
-
-  border-top: 5px solid;
-  border-radius: 3px;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
-}
-
-.img-icon {
-  text-align: right;
-  position: relative;
-}
-
-.container img {
-  max-width: 21%;
-}
-
-h3 {
-  font-size: 1.1rem;
-  color: var(--very-dark-blue);
-  margin-bottom: 0.5rem;
-}
-
-.paragraph-regular {
-  width: 87%;
-  font-size: 0.7rem;
-  margin-bottom: 2.3rem;
-}
-
-.container-supervisor {
-  border-color: var(--cyan);
-}
-
-.container-team-builder {
-  border-color: var(--red);
-}
-
-.container-karma {
-  border-color: var(--orange);
-}
-
-.container-calculator {
-  border-color: var(--blue);
-}
-
-@media (min-width: 1200px) {
   main {
-    flex-direction: row;
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
   }
 
   .section-column {
     width: 360px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1.5rem;
+  }
+}
+
+/* STYLE */
+
+.paragraph-intro {
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: var(--very-dark-blue);
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+
+.paragraph-summary {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.container {
+  width: 90%;
+  padding: 1.5em 2em;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  border-top: 5px solid;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.2);
+
+  background-color: white;
+}
+
+.supervisor {
+  border-color: var(--cyan);
+}
+
+.team-builder {
+  border-color: var(--red);
+}
+
+.karma {
+  border-color: var(--orange);
+}
+
+.calculator {
+  border-color: var(--blue);
+}
+
+h2 {
+  color: var(--very-dark-blue);
+  font-size: 1.25rem;
+}
+
+.paragraph-container-content {
+  font-size: 0.8rem;
+  margin: 0.5rem 0 2rem 0;
+}
+
+.img-icon img {
+  width: 25%;
+}
+
+@media (min-width: 1200px) {
+  .paragraph-intro {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 
   .container {
-    max-height: 220px;
+    width: 33%;
+    height: 220px;
+  }
+
+  .team-builder,
+  .karma {
+    width: 100%;
+  }
+
+  .img-icon img {
+    width: 20%;
   }
 }
